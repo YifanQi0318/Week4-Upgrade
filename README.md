@@ -14,7 +14,6 @@ Item Pickups
 Multiple Weapons/Attacks
 
 level 3:
- 
 Audio Settings
 Economy System(unfinished)
 
