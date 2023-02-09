@@ -1,0 +1,15 @@
+res://TitleScreen/menu.tscn
+res://Player/Attacks/icespear.tscn
+res://Player/player.tscn
+res://Levels/world.tscn
+res://Shop.gd
+res://Levels/shop.tscn
+res://Utility/upgrade_db.tscn
+res://Utility/upgrade_db.gd
+res://Utility/enemy_spawner.tscn
+res://Utility/item_option.tscn
+res://Utility/basic_button.tscn
+res://Player/Attacks/javelin.gd
+res://Player/player.gd
+res://TitleScreen/menu.gd
+res://Levels/UI.gd

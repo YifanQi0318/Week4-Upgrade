@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvcco1ye3yxfm"]
+
+[ext_resource type="Script" path="res://Player/Attacks/icespear.gd" id="1_5cav4"]
+[ext_resource type="Texture2D" uid="uid://cou63ykr5vo7o" path="res://Textures/Items/Weapons/slash.png" id="2_gechy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1efl3"]
+size = Vector2(28.2843, 28.2843)
+
+[node name="Icespear" type="Area2D" groups=["attack"]]
+top_level = true
+scale = Vector2(0.1, 0.1)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_5cav4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -2.36341
+texture = ExtResource("2_gechy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.72372e-07, 1.41181e-06)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1efl3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="snd_play" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+pitch_scale = 5.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

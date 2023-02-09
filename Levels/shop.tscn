@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgj4yxd3fkeig"]
+
+[ext_resource type="Script" path="res://Shop.gd" id="1_e30ys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dbt6"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_e30ys")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(15.9827, 9.03723)
+
+[node name="BuyingThing" type="Panel" parent="Panel"]
+modulate = Color(0.827451, 0.878431, 0.988235, 1)
+offset_left = 8.44664
+offset_top = 8.63096
+offset_right = 48.4466
+offset_bottom = 48.631
+scale = Vector2(0.580632, 0.235613)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0dbt6")
+
+[node name="Title" type="Label" parent="Panel/BuyingThing"]
+offset_left = 15.6249
+offset_top = -35.223
+offset_right = 55.6249
+offset_bottom = -9.22305
+scale = Vector2(0.1792, 0.973711)
+text = "ITEM"
+
+[node name="description" type="Label" parent="Panel/BuyingThing/Title"]
+offset_left = -71.5581
+offset_top = 43.8912
+offset_right = 107.442
+offset_bottom = 95.8912
+scale = Vector2(1.02368, 0.88811)
+text = "Armor+1 hp-5"
+
+[node name="description" type="Label" parent="Panel/BuyingThing/Title/description"]
+offset_left = -3.0
+offset_top = 40.0
+offset_right = 176.0
+offset_bottom = 85.0
+scale = Vector2(1.02368, 0.88811)
+text = "Speed+10 hp-5"
+
+[node name="description" type="Label" parent="Panel/BuyingThing/Title/description/description"]
+offset_left = 0.635292
+offset_top = 38.1257
+offset_right = 179.635
+offset_bottom = 90.1257
+scale = Vector2(1.02368, 0.88811)
+text = "Attack+1 hp-10"
+
+[node name="Purchase" type="Button" parent="Panel/BuyingThing"]
+offset_left = 33.5127
+offset_top = 3.28749
+offset_right = 113.513
+offset_bottom = 34.2875
+scale = Vector2(0.202591, 1)
+text = "Purchase"
+
+[node name="Purchase_2" type="Button" parent="Panel/BuyingThing/Purchase"]
+offset_left = -0.531891
+offset_top = 35.223
+offset_right = 79.4681
+offset_bottom = 66.2231
+scale = Vector2(0.989803, 0.793358)
+text = "Purchase"
+
+[node name="Purchase_3" type="Button" parent="Panel/BuyingThing/Purchase"]
+offset_left = -1.06378
+offset_top = 64.3408
+offset_right = 78.9362
+offset_bottom = 95.3408
+scale = Vector2(0.968526, 0.757321)
+text = "Purchase"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 579.0
+offset_top = 10.0
+offset_right = 629.0
+offset_bottom = 41.0
+text = "Close
+"
+
+[connection signal="pressed" from="Panel/BuyingThing/Purchase" to="." method="_on_purchase_pressed"]
+[connection signal="pressed" from="Panel/BuyingThing/Purchase/Purchase_2" to="." method="_on_purchase_pressed"]
+[connection signal="pressed" from="Panel/BuyingThing/Purchase/Purchase_2" to="." method="_on_purchase_2_pressed"]
+[connection signal="pressed" from="Panel/BuyingThing/Purchase/Purchase_3" to="." method="_on_purchase_pressed"]
+[connection signal="pressed" from="Panel/BuyingThing/Purchase/Purchase_3" to="." method="_on_purchase_3_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
